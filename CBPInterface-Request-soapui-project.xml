@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c5b02742-cd93-4d39-82e8-77e86723a389" activeEnvironment="Default" name="CBPInterface_Request" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="2fb78e4e-c084-4dd3-a98a-055e4a68525b" wsaVersion="NONE" name="RequestBinding" type="wsdl" bindingName="{http://cps.huawei.com/cpsinterface/request}RequestBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Talal/Downloads/CBPInterface_Request.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\Talal\Downloads\CBPInterface_Request.wsdl"><con:part><con:url>file:\C:\Users\Talal\Downloads\CBPInterface_Request.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://cps.huawei.com/cpsinterface/request" xmlns:wsa="http://www.w3.org/2005/08/addressing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cps.huawei.com/cpsinterface/request" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:req="http://cps.huawei.com/cpsinterface/request">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cps.huawei.com/cpsinterface/request">
+      <xs:element name="RequestMsg" type="xs:string"/>
+      <xs:element name="ResponseMsg" type="xs:string"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestMessage">
+    <wsdl:part name="RequestMsg" element="tns:RequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseMessage">
+    <wsdl:part name="ResponseMsg" element="tns:ResponseMsg"/>
+  </wsdl:message>
+  <wsdl:portType name="RequestMgrPortType">
+    <wsdl:operation name="GenericAPIRequest">
+      <wsdl:input message="tns:RequestMessage"/>
+      <wsdl:output message="tns:ResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestBinding" type="tns:RequestMgrPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GenericAPIRequest">
+      <soap:operation soapAction="GenericAPIRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RequestMgrService">
+    <wsdl:port name="RequestMgrServicePort" binding="tns:RequestBinding">
+      <soap:address location="http://cps.huawei.com/cpsinterface/request"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://cps.huawei.com/cpsinterface/request</con:endpoint><con:endpoint>http://localhost:8888</con:endpoint><con:endpoint>https://gw.icp-proxy.jazzcash-fra04-b3c-32x128-32e4d82b5ac35ba812aabbeece8661d9-0000.eu-de.containers.appdomain.cloud/jazzcashtestorg/sandbox/cps-requestmgrservice</con:endpoint></con:endpoints><con:operation id="c0e5920d-cc40-41dc-9db2-7a25dfd6142b" isOneWay="false" action="GenericAPIRequest" name="GenericAPIRequest" bindingOperationName="GenericAPIRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be4aa854-ac1f-406d-8f48-db14cfd36eda" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/mock-cpsr1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://cps.huawei.com/cpsinterface/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:RequestMsg>?</req:RequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6b768a73-be1b-42c1-9535-1882975c3659" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://cps.huawei.com/cpsinterface/request</con:endpoint><con:request><![CDATA[<Result>\r
+   <ResultParameters>\r
+      <ResultParameter>\r
+         <Key>Commission</Key>\r
+         <Value>0.00</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>Fee</Key>\r
+         <Value>0.00</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>TransEndTime</Key>\r
+         <Value>210227</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>TransEndDate</Key>\r
+         <Value>20200724</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>IdentityName</Key>\r
+         <Value>Muhammad Waqas Burney</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>WHT</Key>\r
+         <Value>0.00</Value>\r
+      </ResultParameter>\r
+      <ResultParameter>\r
+         <Key>FED</Key>\r
+         <Value>0.00</Value>\r
+      </ResultParameter>\r
+   </ResultParameters>\r
+   <ResultCode>0</ResultCode>\r
+   <ResultType>0</ResultType>\r
+   <OriginatorConversationID>S_X2013012666921001_TA1</OriginatorConversationID>\r
+   <ResultDesc>Process service request successfully.</ResultDesc>\r
+   <TransactionID>110710706773</TransactionID>\r
+   <ConversationID>AG_20200725_0000577d2c477c428ac5</ConversationID>\r
+</Result>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e264a5e2-666d-4c34-a1b9-d74fd197cedb" name="SIT"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://cps.huawei.com/cpsinterface/request</con:endpoint><con:request><![CDATA[<Request>\r
+   <Identity>\r
+      <Caller>\r
+         <CallerType>2</CallerType>\r
+         <ThirdPartyID>ibm_consumer_app</ThirdPartyID>\r
+         <Password>wYfqdwXjOyWtaoi0+jeDPQ==</Password>\r
+         <ResultURL>http://192.170.128.85:32620/cpsinterface/result</ResultURL>\r
+      </Caller>\r
+      <Initiator>\r
+         <IdentifierType>1</IdentifierType>\r
+         <Identifier>923219272700</Identifier>\r
+      </Initiator>\r
+      <ReceiverParty>\r
+         <IdentifierType>1</IdentifierType>\r
+         <Identifier>920341567809</Identifier>\r
+      </ReceiverParty>\r
+   </Identity>\r
+   <Transaction>\r
+      <CommandID>InitTrans_MoneyTransfer(C2C)</CommandID>\r
+      <OriginatorConversationID>1595705767-bc86d8d4-19b8-4e37-8553-68ef9931a6ff</OriginatorConversationID>\r
+      <Parameters>\r
+         <Parameter>\r
+            <Key>Amount</Key>\r
+            <Value>100</Value>\r
+         </Parameter>\r
+         <Parameter>\r
+            <Key>ChannelCode</Key>\r
+            <Value>1015</Value>\r
+         </Parameter>\r
+      </Parameters>\r
+      <ReferenceData>\r
+         <ReferenceItem>\r
+            <Key>ibm_cacheID</Key>\r
+            <Value>1595705767-bc86d8d4-19b8-4e37-8553-68ef9931a6ff_15fe48ee-ceae-11ea-98ed-ac1e56d60000</Value>\r
+         </ReferenceItem>\r
+         <ReferenceItem>\r
+            <Key>ibm_ace_callback</Key>\r
+            <Value>http://172.30.86.214:7800/rest/cpsCallback</Value>\r
+         </ReferenceItem>\r
+      </ReferenceData>\r
+      <Timestamp>20200725193607</Timestamp>\r
+   </Transaction>\r
+   <KeyOwner>1</KeyOwner>\r
+</Request>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b3ca1ee4-3660-45d8-94b5-72b798054832" name="Request 4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://cps.huawei.com/cpsinterface/request</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://cps.huawei.com/cpsinterface/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:RequestMsg>?</req:RequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="ac02f7c8-d8c6-40c7-becb-bf1c2d74a687" port="8888" path="/mock-cpsr1" host="" name="MockService 1" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="GenericAPIRequest" id="b0b4ee51-10f2-4a06-91f9-3be233aca839" interface="RequestBinding" operation="GenericAPIRequest"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="888d15df-35f1-4d99-a318-69b56af13c6a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://cps.huawei.com/cpsinterface/request">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <req:ResponseMsg>test123</req:ResponseMsg>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIRequest"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
