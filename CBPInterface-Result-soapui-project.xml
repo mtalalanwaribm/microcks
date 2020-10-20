@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="35171900-2cbf-4291-9a52-8dddbf1c0e6c" activeEnvironment="Default" name="CBPInterface_Result" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="50596fbb-1bcf-4489-bcb9-c7b949547bb6" wsaVersion="NONE" name="ResultBinding" type="wsdl" bindingName="{http://cps.huawei.com/cpsinterface/result}ResultBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Talal/Downloads/CBPInterface_Result.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\Talal\Downloads\CBPInterface_Result.wsdl"><con:part><con:url>file:\C:\Users\Talal\Downloads\CBPInterface_Result.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://cps.huawei.com/cpsinterface/result" xmlns:wsa="http://www.w3.org/2005/08/addressing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cps.huawei.com/cpsinterface/result" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:res="http://cps.huawei.com/cpsinterface/result">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cps.huawei.com/cpsinterface/result">
+      <xs:element name="ResultMsg" type="xs:string"/>
+      <xs:element name="ResponseMsg" type="xs:string"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ResultMessage">
+    <wsdl:part name="ResultMsg" element="tns:ResultMsg"></wsdl:part>
+  </wsdl:message>
+  <!--<wsdl:message name="ResponseMessage">
+        <wsdl:part name="ResponseMsg" element="tns:ResponseMsg">
+        </wsdl:part>
+    </wsdl:message>-->
+  <wsdl:portType name="ResultMgrPortType">
+    <wsdl:operation name="GenericAPIResult">
+      <wsdl:input message="tns:ResultMessage"/>
+      <!--<wsdl:output message="tns:ResponseMessage" />-->
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResultBinding" type="tns:ResultMgrPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GenericAPIResult">
+      <soap:operation soapAction="GenericAPIResult" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <!--<wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>-->
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResultMgrService">
+    <wsdl:port name="ResultMgrServicePort" binding="tns:ResultBinding">
+      <soap:address location="http://cps.huawei.com/cpsinterface/result"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://cps-callback-service-http-ace.jazzcash-fra04-b3c-32x128-32e4d82b5ac35ba812aabbeece8661d9-0000.eu-de.containers.appdomain.cloud/cpsinterface/result</con:endpoint><con:endpoint>http://cps.huawei.com/cpsinterface/result</con:endpoint></con:endpoints><con:operation id="71036c1b-6b26-43a2-94a4-43d84c1ceb1e" isOneWay="false" action="GenericAPIResult" name="GenericAPIResult" bindingOperationName="GenericAPIResult" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="06436fc2-df2a-49b9-a787-dd55f69e7855" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://cps-callback-service-http-ace.jazzcash-fra04-b3c-32x128-32e4d82b5ac35ba812aabbeece8661d9-0000.eu-de.containers.appdomain.cloud/cpsinterface/result</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://cps.huawei.com/cpsinterface/result">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <res:ResultMsg></res:ResultMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIResult"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d657c6e1-8650-4635-9058-d69b9713d5e7" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://cps-callback-service-http-ace.jazzcash-fra04-b3c-32x128-32e4d82b5ac35ba812aabbeece8661d9-0000.eu-de.containers.appdomain.cloud/cpsinterface/result</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://cps.huawei.com/cpsinterface/result">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <res:ResultMsg><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<Result> 
+  <ResultType>0</ResultType> 
+  <ResultCode>0</ResultCode> 
+  <ResultDesc>Process service request successfully.</ResultDesc> 
+  <OriginatorConversationID>S_X2013012921001</OriginatorConversationID> 
+  <ConversationID>AG_20130129T102103</ConversationID> 
+  <TransactionID>XD2013012923789234</TransactionID> 
+  <ResultParameters> 
+    <ResultParameter> 
+      <Key>TransEndDate</Key> 
+      <Value>20140102</Value> 
+    </ResultParameter> 
+    <ResultParameter> 
+      <Key>TransEndTime</Key> 
+      <Value>130159</Value> 
+    </ResultParameter> 
+    <ResultParameter> 
+      <Key>Fee</Key> 
+      <Value>0.70</Value> 
+    </ResultParameter> 
+    <ResultParameter> 
+      <Key>Commission</Key> 
+      <Value>2.00</Value> 
+    </ResultParameter> 
+    <ResultParameter> 
+      <Key>FED</Key> 
+      <Value>0.50</Value> 
+    </ResultParameter> 
+    <ResultParameter> 
+      <Key>WHT</Key> 
+      <Value>0.30</Value> 
+    </ResultParameter> 
+  </ResultParameters> 
+</Result>]]]]>><![CDATA[</res:ResultMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIResult"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="25ba9c54-af5d-454f-9d50-7961cdacfd42" port="8080" path="/mockcpsr1" host="" name="MockService 1" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties><con:property><con:name>version</con:name><con:value>1</con:value></con:property></con:properties><con:mockOperation name="GenericAPIResult" id="c54ddcb0-bf8a-4ae0-88cc-42ff9e840622" interface="ResultBinding" operation="GenericAPIResult"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="451c9422-f89f-4fdb-9eaa-2005c8832873" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GenericAPIResult"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
